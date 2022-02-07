@@ -117,14 +117,8 @@ impl Writer {
         }
     }
 }
-/*
-pub static WRITER: Writer = Writer {
-    column_position: 0,
-    color_code: ColorCode::new(Color::Yellow, Color::Black),
-    buffer: unsafe { &mut *(0xb8000 as *mut Buffer) },
-};
-*/
-pub fn print_something() {
+
+/*pub fn print_something() {
     use core::fmt::Write;
     let mut writer = Writer {
         column_position: 0,
@@ -135,7 +129,7 @@ pub fn print_something() {
     writer.write_byte(b'H');
     writer.write_string("ello! ");
     write!(writer, "The numbers are {} and {}", 42, 1.0/3.0).unwrap();
-}
+}*/
 
 lazy_static! {
     pub static ref WRITER: Mutex<Writer> = Mutex::new(Writer {
